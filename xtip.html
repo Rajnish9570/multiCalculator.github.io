@@ -50,7 +50,7 @@
       <label for="tipPercentage">Tip Percentage:</label>
       <input type="number" id="tipPercentage" placeholder="Enter the tip percentage" required>
     </p>
-      <input type="submit" id="button" value="Calculate Tip">
+      <input type="submit" id="button" value="Calculate Tip" onclick="subm()">
    <hr>
    <div id="resulta">
     <h3>Calculations display here...</h3>
@@ -83,21 +83,23 @@
 </footer>
 <hr>
   <script>
-    document.getElementById("tipForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent form submission
+ function subm(){
       
       // Get input values
-      var billAmount = parseFloat(document.getElementById("billAmount").value);
-      var tipPercentage = parseFloat(document.getElementById("tipPercentage").value);
+      var billAmount = document.getElementById("billAmount").value;
+      var tipPercentage = document.getElementById("tipPercentage").value;
       
       // Calculate tip
       var tipAmount = billAmount * (tipPercentage / 100);
-      var totalAmount = billAmount + tipAmount;
+      var totalAmount = parseFloat(billAmount) + parseFloat(tipAmount);
       
       // Display result
       var resultElement = document.getElementById("result");
       resultElement.innerHTML = "Tip Amount: $" + tipAmount.toFixed(2) + "<br>Total Amount: $" + totalAmount.toFixed(2);
-    });
+ }
   </script>
 </body>
 </html>
+
+
+
