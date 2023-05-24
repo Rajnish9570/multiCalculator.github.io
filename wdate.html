@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Date and Time Difference Calculator</title>
+  <style>
+       body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            input[type="date"] {
+             margin-top: 5px;
+                display: flex;
+                padding: 10px;
+                font-weight: 900;
+                color: blue;
+                outline: none;
+                border: 2px solid sandybrown;
+            }
+            input[type="time"] {
+             margin-top: 5px;
+                display: flex;
+                padding: 10px;
+                font-weight: 900;
+                color: blue;
+                outline: none;
+                border: 2px solid sandybrown;
+            }
+            button {
+                margin: 10px;
+                background-color:sandybrown ;
+                padding: 10px;
+                border: 0;
+                outline: none;
+                border-radius:8px;
+                font-weight: 700;
+            }
+            ::placeholder{
+                color: blue;
+        
+            }
+            #resulta{
+              background-color: sandybrown;
+                font-weight: 900;  
+                padding: 30px;
+            }
+  </style>
+  <script>
+    function calculateDateTimeDifference() {
+      var startDate = document.getElementById("start-date").value;
+      var startTime = document.getElementById("start-time").value;
+      var endDate = document.getElementById("end-date").value;
+      var endTime = document.getElementById("end-time").value;
+      
+      var startDateTime = new Date(startDate + " " + startTime);
+      var endDateTime = new Date(endDate + " " + endTime);
+      
+      var timeDiff = Math.abs(endDateTime.getTime() - startDateTime.getTime());
+      var diffDays = Math.floor(timeDiff / (1000 * 3600 * 24));
+      var diffMonths = Math.floor(diffDays / 30.436875);
+      var diffYears = Math.floor(diffDays / 365.25);
+      var diffHours = Math.floor(timeDiff / (1000 * 3600));
+      
+      document.getElementById("result").innerHTML = "Day Difference: " + diffDays + " days<br>" +
+                                                     "Month Difference: " + diffMonths + " months<br>" +
+                                                     "Year Difference: " + diffYears + " years<br>" +
+                                                     "Hour Difference: " + diffHours + " hours";
+    }
+  </script>
+</head>
+<body>
+  <h1>Date and Time Difference Calculator</h1>
+  <p>
+  <label for="start-date">Start Date:</label>
+  <input type="date" id="start-date" >
+  </p>
+  <p>
+  <label for="start-time">Start Time:</label>
+  <input type="time" id="start-time">
+  </p>
+ <p>
+  <label for="end-date">End Date:</label>
+  <input type="date" id="end-date">
+  </p>
+  <p>
+  <label for="end-time">End Time:</label>
+  <input type="time" id="end-time">
+  </p>
+  
+  <button onclick="calculateDateTimeDifference()">Calculate</button>
+  <hr>
+  <div id="resulta">
+    <h3>Calculations display here...</h3>
+  <div id="result"></div>
+  </div>
+  <hr>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+     <strong>Get in one touch on this links</strong>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li><hr>
+          <li><a href="letsTry.html">LCM, HCF, GCD Calculator</a></li><hr>
+          <li><a href="table.html">Multiplicaton Table Generator</a></li><hr>
+          <li><a href="primeFactor.html">Prime Factor Finder</a></li><hr>
+          <li><a href="allFactorandMul.html">All Factor Finder</a></li><hr>
+          <li><a href="binary.html">Decimal-Binary Conversion</a></li><hr>
+          <li><a href="arithmetic.html">All Arithmetic Calculator</a></li><hr>
+          <li><a href="squareCube.html">Square, Cube it's Calculator</a></li><hr>
+          <li><a href="percent.html">Percent of a number Calculator </a></li><hr>
+          <li><a href="percentB.html">Percentage Calculator</a></li><hr>
+          <li><a href="vemi.html">Loan Calculator</a></li><hr>
+          <li><a href="wdate.html">Days difference Calculator</a></li><hr>
+          <li><a href="xtip.html">Tip Calculator</a></li><hr>
+          <li><a href="ybmi.html">BMI Calculator</a></li><hr>
+          <li><a href="zage.html">Age Calculator</a></li><hr>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <hr>
+</body>
+</html>

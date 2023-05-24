@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+  <title>Square and Cube Calculator</title>
+  <style>
+     body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            input[type="number"] {
+             margin-top: 5px;
+                display: flex;
+                padding: 10px;
+                font-weight: 900;
+                color: blue;
+                outline: none;
+                border: 2px solid sandybrown;
+            }
+            button {
+                margin: 10px;
+                background-color:sandybrown ;
+                padding: 10px;
+                border: 0;
+                outline: none;
+                border-radius:8px;
+                font-weight: 700;
+            }
+            ::placeholder{
+                color: blue;
+        
+            }
+            #resulta{
+              background-color: sandybrown;
+                font-weight: 900;  
+                padding: 30px;
+            }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h2>Find Square and Cube Calculator</h2>
+
+    <div class="input-field">
+     
+      <input type="number" id="number" placeholder="Enter the Number...">
+    </div>
+
+    <button class="btn" onclick="calculate()">Calculate</button>
+  <hr>
+  <div id="resulta">
+  <h3 >Calculation display here..</h3>
+  <p><strong>Square:</strong> <span id="square"></span></p>
+  <p><strong>Cube:</strong> <span id="cube"></span></p>
+  <p><strong>Square Root:</strong> <span id="sqrt"></span></p>
+  <p><strong>Cube Root:</strong> <span id="cbrt"></span></p>
+  </div>
+  <hr>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+     <strong>Get in one touch on this links</strong>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li><hr>
+          <li><a href="letsTry.html">LCM, HCF, GCD Calculator</a></li><hr>
+          <li><a href="table.html">Multiplicaton Table Generator</a></li><hr>
+          <li><a href="primeFactor.html">Prime Factor Finder</a></li><hr>
+          <li><a href="allFactorandMul.html">All Factor Finder</a></li><hr>
+          <li><a href="binary.html">Decimal-Binary Conversion</a></li><hr>
+          <li><a href="arithmetic.html">All Arithmetic Calculator</a></li><hr>
+          <li><a href="squareCube.html">Square, Cube and it's roots Calculator</a></li><hr>
+          <li><a href="percent.html">Percent of a number Calculator </a></li><hr>
+          <li><a href="percentB.html">Percentage Calculator</a></li><hr>
+          <li><a href="vemi.html">Loan Calculator</a></li><hr>
+          <li><a href="wdate.html">Days difference Calculator</a></li><hr>
+          <li><a href="xtip.html">Tip Calculator</a></li><hr>
+          <li><a href="ybmi.html">BMI Calculator</a></li><hr>
+          <li><a href="zage.html">Age Calculator</a></li><hr>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function calculate() {
+      var number = parseFloat(document.getElementById('number').value);
+
+      if (!isNaN(number)) {
+        var square = number * number;
+        var cube = number * number * number;
+        var sqrt = Math.sqrt(number);
+        var cbrt = Math.cbrt(number);
+
+        document.getElementById('square').textContent = square;
+        document.getElementById('cube').textContent = cube;
+        document.getElementById('sqrt').textContent = sqrt.toFixed(2);
+        document.getElementById('cbrt').textContent = cbrt.toFixed(2);
+      }
+    }
+  </script>
+</body>
+</html>

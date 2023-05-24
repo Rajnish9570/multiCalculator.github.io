@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mean Calculator</title>
+  <style>
+        body{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    input{
+      display: flex;
+      margin: 10px;
+      padding: 15px;
+      outline: none;
+     border: 2px solid sandybrown;
+    }
+    button{
+    border: 1px blue solid;
+    padding: 10px;
+    background-color: white;
+    color: blue;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    margin: 10px;
+}
+h1{
+  margin: 10px;
+}
+
+a{
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+    color: sandybrown;
+}
+li{
+list-style: none;
+padding: 10px;
+}
+  </style>
+  <script>
+    function calculateMean() {
+      var inputs = document.getElementsByClassName('input-number');
+      var total = 0;
+      var count = 0;
+
+      for (var i = 0; i < inputs.length; i++) {
+        var inputValue = parseFloat(inputs[i].value);
+
+        if (!isNaN(inputValue)) {
+          total += inputValue;
+          count++;
+        }
+      }
+
+      var mean = total / count;
+      document.getElementById('result').textContent = "Mean: " + mean.toFixed(2);
+    }
+
+    function addInputField() {
+      var inputContainer = document.getElementById('input-container');
+      var newInput = document.createElement('input');
+      newInput.type = 'number';
+      newInput.className = 'input-number';
+      inputContainer.appendChild(newInput);
+    }
+  </script>
+</head>
+<body>
+  <h3>Mean Calculator</h3>
+  <nav>
+    <li><a href="areaSqRect.html">Geometric Shapes Calculator</a></li>
+    <li><a href="areaSqRect2.html">Geometric shapes Calculator 2</a></li>
+    <li><a href="color.html">Hex Value, HSL value, RGB value Finder</a></li>
+    <li><a href="mean.html">Mean Calculator</a></li>
+    <li><a href="median.html">Median Calculator</a></li>
+    <li><a href="mode.html">Mode Calculator</a></li>
+    <li><a href="uuu.html">Average Calculator</a></li>
+    <li><a href="word.html">Text-binary conversion</a></li>
+    <li><a href="ratio.html">Math Solver</a></li>
+    <li><a href="phy.html">Time Distance & Speed Calculator</a></li>
+    <li><a href="fraction.html">Fractional Calculations</a></li>
+    <li><a href="countWord.html">Word counter</a></li>
+    <li><a href="chart.html">Trigonometry Functions Value </a></li>
+    <li><a href="power.html">Power and root Calculator</a></li>
+</nav>
+<hr>
+
+  <div id="input-container">
+    <input type="number" class="input-number" />
+  </div>
+  <button onclick="addInputField()">Add Input</button>
+  <button onclick="calculateMean()">Calculate</button>
+  <p id="result"></p>
+  <a href="index.html">HOME</a>
+</body>
+</html>
+
+

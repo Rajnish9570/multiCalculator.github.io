@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Decimal-Binary Converter</title>
+  <style>
+      body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            input[type="number"] {
+             margin-top: 5px;
+                display: flex;
+                padding: 10px;
+                font-weight: 900;
+                color: blue;
+                outline: none;
+                border: 2px solid sandybrown;
+            }
+            button {
+                margin: 10px;
+                background-color:sandybrown ;
+                padding: 10px;
+                border: 0;
+                outline: none;
+                border-radius:8px;
+                font-weight: 700;
+            }
+            ::placeholder{
+                color: blue;
+        
+            }
+            #resulta{
+              background-color: sandybrown;
+                font-weight: 900;  
+                padding: 30px;
+            }
+  </style>
+</head>
+<body>
+  <div class="converter">
+    <h2>Decimal-Binary Converter</h2>
+    <input type="number" id="decimalInput" placeholder="Enter decimal number">
+    <button onclick="convertToBinary()">Convert to Binary</button>
+    <input type="number" id="binaryInput" placeholder="Enter binary number">
+    <button onclick="convertToDecimal()">Convert to Decimal</button>
+    <hr>
+    
+
+    <div id="resulta">
+      <h3 >Calculation display here..</h3>
+      <h3 id="result1"></h3>
+      <h3 id="result2"></h3>
+      </div>
+<hr>
+<footer>
+  <div class="footer-container">
+    <div class="footer-content">
+   <strong>Get in one touch on this links</strong>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li><hr>
+        <li><a href="letsTry.html">LCM, HCF, GCD Calculator</a></li><hr>
+        <li><a href="table.html">Multiplicaton Table Generator</a></li><hr>
+        <li><a href="primeFactor.html">Prime Factor Finder</a></li><hr>
+        <li><a href="allFactorandMul.html">All Factor Finder</a></li><hr>
+        <li><a href="binary.html">Decimal-Binary Conversion</a></li><hr>
+        <li><a href="arithmetic.html">All Arithmetic Calculator</a></li><hr>
+        <li><a href="squareCube.html">Square, Cube it's roots Calculator</a></li><hr>
+        <li><a href="percent.html">Percent of a number Calculator </a></li><hr>
+        <li><a href="percentB.html">Percentage Calculator</a></li><hr>
+        <li><a href="vemi.html">Loan Calculator</a></li><hr>
+        <li><a href="wdate.html">Days difference Calculator</a></li><hr>
+        <li><a href="xtip.html">Tip Calculator</a></li><hr>
+        <li><a href="ybmi.html">BMI Calculator</a></li><hr>
+        <li><a href="zage.html">Age Calculator</a></li><hr>
+      </ul>
+    </div>
+  </div>
+</footer>
+  <script>
+    // JavaScript functions
+    function convertToBinary() {
+      var decimalNumber = parseInt(document.getElementById('decimalInput').value);
+      var binaryNumber = decimalNumber.toString(2);
+      document.getElementById('result1').innerHTML = 'Binary of ' + decimalNumber +' :- ' + binaryNumber;
+    }
+
+    function convertToDecimal() {
+      var binaryNumber = document.getElementById('binaryInput').value;
+      var decimalNumber = parseInt(binaryNumber, 2);
+      document.getElementById('result2').innerHTML = 'Decimal of ' + binaryNumber + ' :- ' + decimalNumber;
+    }
+  </script>
+</body>
+</html>

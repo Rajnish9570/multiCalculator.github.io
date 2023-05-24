@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trigonometry Calculator</title>
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+    
+    }
+    input{
+      padding: 10px;
+      border: 2px solid sandybrown;
+   
+    }
+    p{
+      margin: 10px;
+      color: blue;
+    }
+
+    button{
+      margin: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      outline: none;
+      border: 1px blue solid;
+      background-color: white;
+      color: blue;
+    }
+    b{
+      margin: 10px;
+      font-size: 1.2rem;
+    }
+    
+a{
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+    color: sandybrown;
+}
+li{
+list-style: none;
+padding: 10px;
+}
+  
+  </style>
+  <script>
+    function calculate() {
+      var angle = document.getElementById("angle").value;
+      var sinValue = Math.sin(angle * (Math.PI / 180));
+      var cosValue = Math.cos(angle * (Math.PI / 180));
+      var tanValue = Math.tan(angle * (Math.PI / 180));
+      var cscValue = 1 / sinValue;
+      var secValue = 1 / cosValue;
+      var cotValue = 1 / tanValue;
+      var arcsinValue = Math.asin(sinValue) * (180 / Math.PI);
+      var arccosValue = Math.acos(cosValue) * (180 / Math.PI);
+      var arctanValue = Math.atan(tanValue) * (180 / Math.PI);
+      var sinhValue = Math.sinh(angle * (Math.PI / 180));
+      var coshValue = Math.cosh(angle * (Math.PI / 180));
+      var tanhValue = Math.tanh(angle * (Math.PI / 180));
+      var sechValue = 1 / coshValue;
+      var cschValue = 1 / sinhValue;
+      var cothValue = 1 / tanhValue;
+      var expValue = Math.exp(angle);
+      var logValue = Math.log(angle);
+      var sqrtValue = Math.sqrt(angle);
+      var powValue = Math.pow(angle, 2);
+      
+      document.getElementById("sin").innerHTML = "sin(" + angle + "°) = " + sinValue.toFixed(4);
+      document.getElementById("cos").innerHTML = "cos(" + angle + "°) = " + cosValue.toFixed(4);
+      document.getElementById("tan").innerHTML = "tan(" + angle + "°) = " + tanValue.toFixed(4);
+      document.getElementById("csc").innerHTML = "csc(" + angle + "°) = " + cscValue.toFixed(4);
+      document.getElementById("sec").innerHTML = "sec(" + angle + "°) = " + secValue.toFixed(4);
+      document.getElementById("cot").innerHTML = "cot(" + angle + "°) = " + cotValue.toFixed(4);
+      document.getElementById("arcsin").innerHTML = "arcsin(" + sinValue.toFixed(4) + ") = " + arcsinValue.toFixed(4) + "°";
+      document.getElementById("arccos").innerHTML = "arccos(" + cosValue.toFixed(4) + ") = " + arccosValue.toFixed(4) + "°";
+      document.getElementById("arctan").innerHTML = "arctan(" + tanValue.toFixed(4) + ") = " + arctanValue.toFixed(4) + "°";
+      document.getElementById("sinh").innerHTML = "sinh(" + angle + "°) = " + sinhValue.toFixed(4);
+      document.getElementById("cosh").innerHTML = "cosh(" + angle + "°) = " + coshValue.toFixed(4);
+      document.getElementById("tanh").innerHTML = "tanh(" + angle + "°) = " + tanhValue.toFixed(4);
+      document.getElementById("sech").innerHTML = "sech(" + angle + "°) = " + sechValue.toFixed(4);
+      document.getElementById("csch").innerHTML = "csch(" + angle + "°) = " + cschValue.toFixed(4);
+      document.getElementById("coth").innerHTML = "coth(" + angle + "°) = " + cothValue.toFixed(4);
+      document.getElementById("exp").innerHTML = "exp(" + angle + ") = " + expValue.toFixed(4);
+      document.getElementById("log").innerHTML = "log(" + angle + ") = " + logValue.toFixed(4);
+      document.getElementById("sqrt").innerHTML = "sqrt(" + angle + ") = " + sqrtValue.toFixed(4);
+      document.getElementById("pow").innerHTML = angle + "^2 = " + powValue.toFixed(4);
+    }
+  </script>
+</head>
+<body>
+  <h3>Trigonometry Calculator</h3>
+  <nav>
+    <li><a href="areaSqRect.html">Geometric Shapes Calculator</a></li>
+    <li><a href="areaSqRect2.html">Geometric shapes Calculator 2</a></li>
+    <li><a href="color.html">Hex Value, HSL value, RGB value Finder</a></li>
+    <li><a href="mean.html">Mean Calculator</a></li>
+    <li><a href="median.html">Median Calculator</a></li>
+    <li><a href="mode.html">Mode Calculator</a></li>
+    <li><a href="uuu.html">Average Calculator</a></li>
+    <li><a href="word.html">Text-binary conversion</a></li>
+    <li><a href="ratio.html">Math Solver</a></li>
+    <li><a href="phy.html">Time Distance & Speed Calculator</a></li>
+    <li><a href="fraction.html">Fractional Calculations</a></li>
+    <li><a href="countWord.html">Word counter</a></li>
+    <li><a href="chart.html">Trigonometry Functions Value </a></li>
+    <li><a href="power.html">Power and root Calculator</a></li>
+</nav>
+<hr>
+  <p>
+  <label for="angle">Angle (in degrees):</label><br>
+  <input type="number" id="angle">
+</p>
+  
+  <button onclick="calculate()">Calculate</button>
+<br>
+<b>Result</b>
+  <p id="sin">sin</p>
+  <p id="cos">cos</p>
+  <p id="tan">tan</p>
+  <p id="csc">csc</p>
+  <p id="sec">sec</p>
+  <p id="cot">cot</p>
+  <p id="arcsin"></p>
+  <p id="arccos"></p>
+  <p id="arctan"></p>
+  <p id="sinh"></p>
+  <p id="cosh"></p>
+  <p id="tanh"></p>
+  <p id="sech"></p>
+  <p id="csch"></p>
+  <p id="coth"></p>
+  <p id="exp"></p>
+  <p id="log">.....</p>
+  <p id="sqrt">.....</p>
+  <p id="pow">.....</p>
+  <hr>
+  <a href="index.html">HOME</a>
+</body>
+</html>

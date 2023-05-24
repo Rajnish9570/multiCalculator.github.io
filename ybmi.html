@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>BMI Calculator</title>
+  <style>
+    body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            input[type="text"] {
+             margin-top: 5px;
+                display: flex;
+                padding: 10px;
+                font-weight: 900;
+                color: blue;
+                outline: none;
+                border: 2px solid sandybrown;
+            }
+            #button {
+                margin: 10px;
+                background-color:sandybrown ;
+                padding: 10px;
+                border: 0;
+                outline: none;
+                border-radius:8px;
+                font-weight: 700;
+            }
+            ::placeholder{
+                color: blue;
+        
+            }
+            #resulta{
+              background-color: sandybrown;
+                font-weight: 900;  
+                padding: 30px;
+            }
+</style>
+</head>
+<body>
+  <h1>BMI Calculator</h1>
+  <div id="calculator">
+    <form onsubmit="calculateBMI(event)">
+      <p>
+      <label for="weight">Weight (kg):</label><br>
+      <input type="text" id="weight" placeholder="Weight in kg"> 
+      </p>
+      <p>
+      <label for="height">Height (cm):</label><br>
+      <input type="text" id="height" placeholder="height in cm"> 
+      </p>
+      <input id="button" type="submit" value="Calculate">
+    <hr>
+    <div id="resulta">
+      <h3>Calculaton display here</h3>
+    <div id="result"></div>
+    <div id="instructions" class="instructions"></div>
+  </div>
+<hr>
+<footer>
+  <div class="footer-container">
+    <div class="footer-content">
+   <strong>Get in one touch on this links</strong>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li><hr>
+        <li><a href="letsTry.html">LCM, HCF, GCD Calculator</a></li><hr>
+        <li><a href="table.html">Multiplicaton Table Generator</a></li><hr>
+        <li><a href="primeFactor.html">Prime Factor Finder</a></li><hr>
+        <li><a href="allFactorandMul.html">All Factor Finder</a></li><hr>
+        <li><a href="binary.html">Decimal-Binary Conversion</a></li><hr>
+        <li><a href="arithmetic.html">All Arithmetic Calculator</a></li><hr>
+        <li><a href="squareCube.html">Square, Cube it's roots Calculator</a></li><hr>
+        <li><a href="percent.html">Percent of a number Calculator </a></li><hr>
+        <li><a href="percentB.html">Percentage Calculator</a></li><hr>
+        <li><a href="vemi.html">Loan Calculator</a></li><hr>
+        <li><a href="wdate.html">Days difference Calculator</a></li><hr>
+        <li><a href="xtip.html">Tip Calculator</a></li><hr>
+        <li><a href="ybmi.html">BMI Calculator</a></li><hr>
+        <li><a href="zage.html">Age Calculator</a></li><hr>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    function calculateBMI(event) {
+      event.preventDefault();
+
+      var weightInput = document.getElementById("weight");
+      var heightInput = document.getElementById("height");
+      var resultElement = document.getElementById("result");
+      var instructionsElement = document.getElementById("instructions");
+
+      var weight = parseFloat(weightInput.value);
+      var height = parseFloat(heightInput.value) / 100; // convert cm to meters
+
+      if (isNaN(weight) || isNaN(height)) {
+        resultElement.textContent = "Please enter valid values for weight and height.";
+        instructionsElement.textContent = "";
+        return;
+      }
+
+      var bmi = weight / (height * height);
+      bmi = Math.round(bmi * 10) / 10; // Round to 1 decimal place
+
+      resultElement.textContent = "Your BMI: " + bmi;
+
+      if (bmi < 18.5) {
+        instructionsElement.textContent = "Underweight: You may need to gain some weight. Consult with a healthcare professional.";
+      } else if (bmi >= 18.5 && bmi < 25) {
+        instructionsElement.textContent = "Normal weight: Keep up the good work!";
+      } else if (bmi >= 25 && bmi < 30) {
+        instructionsElement.textContent = "Overweight: You may need to lose some weight. Consult with a healthcare professional.";
+      } else {
+        instructionsElement.textContent = "Obese: You may need to lose weight for the sake of your health. Consult with a healthcare professional.";
+      }
+    }
+  </script>
+</body>
+</html>

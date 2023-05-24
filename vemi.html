@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+  <title>Loan Calculator</title>
+  <style>
+   body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            input[type="number"] {
+             margin-top: 5px;
+                display: flex;
+                padding: 10px;
+                font-weight: 900;
+                color: blue;
+                outline: none;
+                border: 2px solid sandybrown;
+            }
+            button {
+                margin: 10px;
+                background-color:sandybrown ;
+                padding: 10px;
+                border: 0;
+                outline: none;
+                border-radius:8px;
+                font-weight: 700;
+            }
+            ::placeholder{
+                color: blue;
+        
+            }
+            #resulta{
+              background-color: sandybrown;
+                font-weight: 900;  
+                padding: 30px;
+            }
+  </style>
+</head>
+<body>
+  <h1>Calculate Your EMIs</h1>
+
+ <p> <input type="number" id="amount" class="inputBox_value" placeholder="Amount in ₹" onchange="calculate();"></p>
+
+ <p> <input type="number" id="apr" class="inputBox_value" placeholder="Annual interest in %" onchange="calculate();"></p>
+
+ <p> <input type="number" id="months" class="inputBox_value" placeholder="Loan Tenur in Months" onchange="calculate();"></p>
+  <button id="calculation_btn" onclick="calculate();">Calculate</button>
+  <hr>
+  <div id="resulta">
+    <h3>Calculations display here...</h3>
+    <p>Your EMI is: <span class="rs">₹</span> <span class="output" id="payment">9250.00</span></p>
+    <p>Total payment: <span class="rs">₹</span> <span class="output" id="total">111000.00</span></p>
+    <p>Interest: <span class="rs">₹</span> <span class="output" id="totalinterest">11000.00</span></p>
+  </div>
+<hr>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+     <strong>Get in one touch on this links</strong>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li><hr>
+          <li><a href="letsTry.html">LCM, HCF, GCD Calculator</a></li><hr>
+          <li><a href="table.html">Multiplicaton Table Generator</a></li><hr>
+          <li><a href="primeFactor.html">Prime Factor Finder</a></li><hr>
+          <li><a href="allFactorandMul.html">All Factor Finder</a></li><hr>
+          <li><a href="binary.html">Decimal-Binary Conversion</a></li><hr>
+          <li><a href="arithmetic.html">All Arithmetic Calculator</a></li><hr>
+          <li><a href="squareCube.html">Square, Cube it's roots Calculator</a></li><hr>
+          <li><a href="percent.html">Percent of a number Calculator </a></li><hr>
+          <li><a href="percentB.html">Percentage Calculator</a></li><hr>
+          <li><a href="vemi.html">Loan Calculator</a></li><hr>
+          <li><a href="wdate.html">Days difference Calculator</a></li><hr>
+          <li><a href="xtip.html">Tip Calculator</a></li><hr>
+          <li><a href="ybmi.html">BMI Calculator</a></li><hr>
+          <li><a href="zage.html">Age Calculator</a></li><hr>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <hr>
+  <script>
+    function calculate() {
+      const amount = parseInt(document.getElementById('amount').value);
+      const apr = parseInt(document.getElementById('apr').value);
+      const months = parseInt(document.getElementById('months').value);
+
+      const interestpay = (amount * apr / 100) / 12 * months;
+      document.getElementById("totalinterest").innerHTML = interestpay.toFixed(2);
+
+      const amountToPay = amount + interestpay;
+      document.getElementById("total").innerHTML = amountToPay.toFixed(2);
+
+      const emi = amountToPay / months;
+      document.getElementById("payment").innerHTML = emi.toFixed(2);
+    }
+  </script>
+</body>
+</html>

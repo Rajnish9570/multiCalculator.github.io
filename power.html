@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Calculator</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    input{
+        width: 45px;
+        height: 15px;
+       padding: 5px;
+        border: none;
+        outline: none;
+        border-radius: 8px;
+        background: #9a8f9d;
+    }
+    #box{
+        background-color: #c84aea;
+        padding: 30px;
+        color: white;
+    }
+    
+a{
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+    color: sandybrown;
+}
+li{
+list-style: none;
+padding: 10px;
+}
+</style>
+<body>
+    <nav>
+        <li><a href="areaSqRect.html">Geometric Shapes Calculator</a></li>
+        <li><a href="areaSqRect2.html">Geometric shapes Calculator 2</a></li>
+        <li><a href="color.html">Hex Value, HSL value, RGB value Finder</a></li>
+        <li><a href="mean.html">Mean Calculator</a></li>
+        <li><a href="median.html">Median Calculator</a></li>
+        <li><a href="mode.html">Mode Calculator</a></li>
+        <li><a href="uuu.html">Average Calculator</a></li>
+        <li><a href="word.html">Text-binary conversion</a></li>
+        <li><a href="ratio.html">Math Solver</a></li>
+        <li><a href="phy.html">Time Distance & Speed Calculator</a></li>
+        <li><a href="fraction.html">Fractional Calculations</a></li>
+        <li><a href="countWord.html">Word counter</a></li>
+        <li><a href="chart.html">Trigonometry Functions Value </a></li>
+        <li><a href="power.html">Power and root Calculator</a></li>
+    </nav>
+    <hr>
+    <div id="box">
+        <center>
+    <h3>Power Calculator</h3>
+  <p> <input type="text" name="" id="num" onchange="clickMe()" placeholder="base"> to the Power
+ <input type="text" name="" id="pow" onchange="clickMe()" placeholder="value"></p>
+<strong id="result">Output</strong>
+</center>
+</div>
+<hr>
+<div id="box">
+    <center>
+<h3>Root Calculator</h3>
+<p> <input type="text" name="" id="numA" onchange="clickMeb()" placeholder="root"> root of 
+<input type="text" name="" id="root" onchange="clickMeb()" placeholder="base"></p>
+<strong id="resultb">Output</strong>
+</center>
+</div>
+<hr>
+<a href="index.html">HOME</a>
+<script>
+    function clickMe(){
+    const a=document.querySelector('#num').value;
+    const b=document.querySelector('#pow').value;
+    const c=a**b;
+    document.querySelector('#result').innerHTML=c;
+    }
+
+    function clickMeb(){
+    const aa = document.querySelector('#numA').value;
+    const bb = document.querySelector('#root').value;
+    const cc = Math.pow(bb, 1/aa);
+    
+    const roundedResult = Math.round(cc);
+    document.querySelector('#resultb').innerHTML = roundedResult;
+  }
+</script>
+</body>
+</html>

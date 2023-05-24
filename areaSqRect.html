@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geometric Shapes Calculator</title>
+    <style>
+        
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    label,#result{
+   
+      color: blue;
+    }
+input, #shape{
+
+  padding: 8px;
+  outline: none;
+  width: 70px;
+  border: none;
+  border-bottom: 2px solid sandybrown;
+}
+#shape, select{
+padding: 8px;
+outline: none;
+width: 100px;
+border: 2px solid sandybrown;
+}
+button{
+  float: right;
+}
+h2{
+  text-align: center;
+  color: sandybrown;
+}
+button{
+    border: 1px blue solid;
+    padding: 10px;
+    background-color: white;
+    color: blue;
+    letter-spacing: 1px;
+    border-radius: 8px;
+}
+
+ a{
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+    color: sandybrown;
+}
+li{
+list-style: none;
+padding: 10px;
+}
+  </style>
+   
+    <script>
+        function calculateShape() {
+            var shape = document.getElementById("shape").value;
+            var result = document.getElementById("result");
+
+            // Parallelogram
+            if (shape === "parallelogram") {
+                var base = parseFloat(document.getElementById("parallelogramBase").value);
+                var height = parseFloat(document.getElementById("parallelogramHeight").value);
+                var area = base * height;
+                var perimeter = 2 * (base + height);
+                result.innerHTML = "Area: " + area.toFixed(2) + "<br><br>Perimeter: " + perimeter.toFixed(2);
+            }
+            
+            // Trapezoid
+            else if (shape === "trapezoid") {
+                var base1 = parseFloat(document.getElementById("trapezoidBase1").value);
+                var base2 = parseFloat(document.getElementById("trapezoidBase2").value);
+                var height = parseFloat(document.getElementById("trapezoidHeight").value);
+                var area = ((base1 + base2) * height) / 2;
+                var perimeter = base1 + base2 + 2 * Math.sqrt(Math.pow((base2 - base1) / 2, 2) + Math.pow(height, 2));
+                result.innerHTML = "Area: " + area.toFixed(2) + "<br><br>Perimeter: " + perimeter.toFixed(2);
+            }
+
+            // Rhombus
+            else if (shape === "rhombus") {
+                var diagonal1 = parseFloat(document.getElementById("rhombusDiagonal1").value);
+                var diagonal2 = parseFloat(document.getElementById("rhombusDiagonal2").value);
+                var area = (diagonal1 * diagonal2) / 2;
+                var perimeter = 4 * Math.sqrt(Math.pow(diagonal1 / 2, 2) + Math.pow(diagonal2 / 2, 2));
+                result.innerHTML = "Area: " + area.toFixed(2) + "<br><br>Perimeter: " + perimeter.toFixed(2);
+            }
+            
+            // Hexagon
+            else if (shape === "hexagon") {
+                var side = parseFloat(document.getElementById("hexagonSide").value);
+                var area = (3 * Math.sqrt(3) * Math.pow(side, 2)) / 2;
+                var perimeter = 6 * side;
+                result.innerHTML = "Area: " + area.toFixed(2) + "<br><br>Perimeter: " + perimeter.toFixed(2);
+            }
+            
+            // Pentagon
+            else if (shape === "pentagon") {
+                var side = parseFloat(document.getElementById("pentagonSide").value);
+                var area = (Math.sqrt(5 * (5 + 2 * Math.sqrt(5))) * Math.pow(side, 2)) / 4;
+                var perimeter = 5 * side;
+                result.innerHTML = "Area: " + area.toFixed(2) + "<br><br>Perimeter: " + perimeter.toFixed(2);
+            }
+            
+            // Octagon
+            else if (shape === "octagon") {
+                var side = parseFloat(document.getElementById("octagonSide").value);
+                var area = 2 * (1 + Math.sqrt(2)) * Math.pow(side, 2);
+                var perimeter = 8 * side;
+                result.innerHTML = "Area: " + area.toFixed(2) + "<br><br>Perimeter: " + perimeter.toFixed(2);
+            }
+            
+            // Oval
+            else if (shape === "oval") {
+                var radius1 = parseFloat(document.getElementById("ovalRadius1").value);
+                var radius2 = parseFloat(document.getElementById("ovalRadius2").value);
+                var area = Math.PI * radius1 * radius2;
+                result.innerHTML = "Area: " + area.toFixed(2);
+            }
+            
+            // Heptagon
+            else if (shape === "heptagon") {
+                var side = parseFloat(document.getElementById("heptagonSide").value);
+                var area = (7 / 4) * Math.pow(side, 2) * (1 / Math.tan(Math.PI / 7));
+                var perimeter = 7 * side;
+                result.innerHTML = "Area: " + area.toFixed(2) + "<br><br>Perimeter: " + perimeter.toFixed(2);
+            }
+            
+            // Nonagon
+            else if (shape === "nonagon") {
+                var side = parseFloat(document.getElementById("nonagonSide").value);
+                var area = (9 / 4) * Math.pow(side, 2) * (1 / Math.tan(Math.PI / 9));
+                var perimeter = 9 * side;
+                result.innerHTML = "Area: " + area.toFixed(2) + "<br><br>Perimeter: " + perimeter.toFixed(2);
+            }
+            
+            // Crescent (Assuming a symmetrical crescent shape)
+            else if (shape === "crescent") {
+                var radius = parseFloat(document.getElementById("crescentRadius").value);
+                var area = (Math.PI / 4) * Math.pow(radius, 2);
+                result.innerHTML = "Area: " + area.toFixed(2);
+            }
+            
+            // Decagon
+            else if (shape === "decagon") {
+                var side = parseFloat(document.getElementById("decagonSide").value);
+                var area = (10 / 4) * Math.pow(side, 2) * (1 / Math.tan(Math.PI / 10));
+                var perimeter = 10 * side;
+                result.innerHTML = "Area: " + area.toFixed(2) + "<br> <br>Perimeter: " + perimeter.toFixed(2);
+            }
+            
+            // Kite
+            else if (shape === "kite") {
+                var diagonal1 = parseFloat(document.getElementById("kiteDiagonal1").value);
+                var diagonal2 = parseFloat(document.getElementById("kiteDiagonal2").value);
+                var area = (diagonal1 * diagonal2) / 2;
+                var perimeter = 2 * (Math.sqrt(Math.pow(diagonal1 / 2, 2) + Math.pow(diagonal2 / 2, 2)) + diagonal1 + diagonal2);
+                result.innerHTML = "Area: " + area.toFixed(2) + "<br> <br>Perimeter: " + perimeter.toFixed(2);
+            }
+            
+            // Ellipse
+            else if (shape === "ellipse") {
+                var radius1 = parseFloat(document.getElementById("ellipseRadius1").value);
+                var radius2 = parseFloat(document.getElementById("ellipseRadius2").value);
+                var area = Math.PI * radius1 * radius2;
+                result.innerHTML = "Area: " + area.toFixed(2);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Geometric Shapes Calculator</h3>
+<nav>
+    <li><a href="areaSqRect.html">Geometric Shapes Calculator</a></li>
+    <li><a href="areaSqRect2.html">Geometric shapes Calculator 2</a></li>
+    <li><a href="color.html">Hex Value, HSL value, RGB value Finder</a></li>
+    <li><a href="mean.html">Mean Calculator</a></li>
+    <li><a href="median.html">Median Calculator</a></li>
+    <li><a href="mode.html">Mode Calculator</a></li>
+    <li><a href="uuu.html">Average Calculator</a></li>
+    <li><a href="word.html">Text-binary conversion</a></li>
+    <li><a href="ratio.html">Math Solver</a></li>
+    <li><a href="phy.html">Time Distance & Speed Calculator</a></li>
+    <li><a href="fraction.html">Fractional Calculations</a></li>
+    <li><a href="countWord.html">Word counter</a></li>
+    <li><a href="chart.html">Trigonometry Functions Value </a></li>
+    <li><a href="power.html">Power and root Calculator</a></li>
+</nav>
+<hr>
+  
+   <p><label for="shape">Select a shape:</label> </p>
+    <select id="shape" onchange="calculateShape()">
+        <option value="">Select</option>
+        <option value="parallelogram">Parallelogram</option>
+        <option value="trapezoid">Trapezoid</option>
+        <option value="rhombus">Rhombus</option>
+        <option value="hexagon">Hexagon</option>
+        <option value="pentagon">Pentagon</option>
+        <option value="octagon">Octagon</option>
+        <option value="oval">Oval</option>
+        <option value="heptagon">Heptagon</option>
+        <option value="nonagon">Nonagon</option>
+        <option value="crescent">Crescent</option>
+        <option value="decagon">Decagon</option>
+        <option value="kite">Kite</option>
+        <option value="ellipse">Ellipse</option>
+    </select>
+    
+    
+    <!-- Parallelogram -->
+    <div id="parallelogramInputs" style="display: none;">
+    <p> <label for="parallelogramBase">Base:</label> <br>
+        <input type="number" id="parallelogramBase"></p>
+    <p><label for="parallelogramHeight">Height:</label> <br>
+        <input type="number" id="parallelogramHeight"></p>
+    </div>
+    
+    <!-- Trapezoid -->
+    <div id="trapezoidInputs" style="display: none;">
+    <p>  <label for="trapezoidBase1">Base 1:</label> <br>
+      <input type="number" id="trapezoidBase1"></p>
+    <p>  <label for="trapezoidBase2">Base 2:</label><br>
+        <input type="number" id="trapezoidBase2"></p>
+    <p>  <label for="trapezoidHeight">Height:</label><br>
+        <input type="number" id="trapezoidHeight"></p>
+    </div>
+    
+    <!-- Rhombus -->
+    <div id="rhombusInputs" style="display: none;">
+    <p> <label for="rhombusDiagonal1">Diagonal 1:</label><br>
+        <input type="number" id="rhombusDiagonal1"></p>
+       <p> <label for="rhombusDiagonal2">Diagonal 2:</label><br>
+        <input type="number" id="rhombusDiagonal2"></p>
+    </div>
+    
+    <!-- Hexagon -->
+    <div id="hexagonInputs" style="display: none;">
+    <p> <label for="hexagonSide">Side:</label> <br>
+        <input type="number" id="hexagonSide"></p>
+    </div>
+    
+    <!-- Pentagon -->
+    <div id="pentagonInputs" style="display: none;">
+    <p><label for="pentagonSide">Side:</label> <br>
+        <input type="number" id="pentagonSide"></p>
+    </div>
+    
+    <!-- Octagon -->
+    <div id="octagonInputs" style="display: none;">
+    <p><label for="octagonSide">Side:</label><br>
+        <input type="number" id="octagonSide"></p>
+    </div>
+    
+    <!-- Oval -->
+    <div id="ovalInputs" style="display: none;">
+    <p> <label for="ovalRadius1">Radius 1:</label><br>
+        <input type="number" id="ovalRadius1"></p>
+    <p> <label for="ovalRadius2">Radius 2:</label><br>
+        <input type="number" id="ovalRadius2"></p>
+    </div>
+    
+    <!-- Heptagon -->
+    <div id="heptagonInputs" style="display: none;">
+    <p><label for="heptagonSide">Side:</label><br>
+        <input type="number" id="heptagonSide"><p>
+    </div>
+    
+    <!-- Nonagon -->
+    <div id="nonagonInputs" style="display: none;">
+    <p><label for="nonagonSide">Side:</label><br>
+        <input type="number" id="nonagonSide"></p>
+    </div>
+    
+    <!-- Crescent -->
+    <div id="crescentInputs" style="display: none;">
+    <p><label for="crescentRadius">Radius:</label><br>
+        <input type="number" id="crescentRadius"></p>
+    </div>
+    
+    <!-- Decagon -->
+    <div id="decagonInputs" style="display: none;">
+     <p> <label for="decagonSide">Side:</label><br>
+        <input type="number" id="decagonSide"></p>
+    </div>
+    
+    <!-- Kite -->
+    <div id="kiteInputs" style="display: none;">
+       <p><label for="kiteDiagonal1">Diagonal 1:</label><br>
+        <input type="number" id="kiteDiagonal1"></p>
+       <p><label for="kiteDiagonal2">Diagonal 2:</label><br>
+        <input type="number" id="kiteDiagonal2"></p>
+    </div>
+    
+    <!-- Ellipse -->
+    <div id="ellipseInputs" style="display: none;">
+       <p> <label for="ellipseRadius1">Radius 1:</label><br>
+        <input type="number" id="ellipseRadius1"></p>
+      <p><label for="ellipseRadius2">Radius 2:</label><br>
+        <input type="number" id="ellipseRadius2"></p>
+    </div>
+    <br>
+    <button onclick="calculateShape()">Calculate</button>
+    <div id="result"></div>
+  <br>
+  <br>
+    <a href="areaSqRect2.html">More Shapes Calculations</a>
+    <a href="index.html">HOME</a>
+    <script>
+        document.getElementById("shape").addEventListener("change", function() {
+            var selectedShape = this.value;
+            
+            // Hide all input sections
+            var inputSections = document.querySelectorAll("#parallelogramInputs, #trapezoidInputs, #rhombusInputs, #hexagonInputs, #pentagonInputs, #octagonInputs, #ovalInputs, #heptagonInputs, #nonagonInputs, #crescentInputs, #decagonInputs, #kiteInputs, #ellipseInputs");
+            inputSections.forEach(function(section) {
+                section.style.display = "none";
+            });
+            
+            // Show the relevant input section based on selected shape
+            if (selectedShape === "parallelogram") {
+                document.getElementById("parallelogramInputs").style.display = "block";
+            } else if (selectedShape === "trapezoid") {
+                document.getElementById("trapezoidInputs").style.display = "block";
+            } else if (selectedShape === "rhombus") {
+                document.getElementById("rhombusInputs").style.display = "block";
+            } else if (selectedShape === "hexagon") {
+                document.getElementById("hexagonInputs").style.display = "block";
+            } else if (selectedShape === "pentagon") {
+                document.getElementById("pentagonInputs").style.display = "block";
+            } else if (selectedShape === "octagon") {
+                document.getElementById("octagonInputs").style.display = "block";
+            } else if (selectedShape === "oval") {
+                document.getElementById("ovalInputs").style.display = "block";
+            } else if (selectedShape === "heptagon") {
+                document.getElementById("heptagonInputs").style.display = "block";
+            } else if (selectedShape === "nonagon") {
+                document.getElementById("nonagonInputs").style.display = "block";
+            } else if (selectedShape === "crescent") {
+                document.getElementById("crescentInputs").style.display = "block";
+            } else if (selectedShape === "decagon") {
+                document.getElementById("decagonInputs").style.display = "block";
+            } else if (selectedShape === "kite") {
+                document.getElementById("kiteInputs").style.display = "block";
+            } else if (selectedShape === "ellipse") {
+                document.getElementById("ellipseInputs").style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>

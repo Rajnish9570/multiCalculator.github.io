@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+    <title>LCM HCF GCD Calculator</title>
+</head>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            input[type="number"] {
+             margin-top: 5px;
+                display: flex;
+                padding: 10px;
+                font-weight: 900;
+                color: blue;
+                outline: none;
+                border: 2px solid sandybrown;
+            }
+            button {
+                margin: 10px;
+                background-color:sandybrown ;
+                padding: 10px;
+                border: 0;
+                outline: none;
+                border-radius:8px;
+                font-weight: 700;
+            }
+            ::placeholder{
+                color: blue;
+        
+            }
+            .inp{
+                padding: 5px;
+                font-weight: 600;
+                color: black;
+                background-color: aqua;
+                outline: none;
+                border: none;
+            }
+       
+        </style>
+    <body>
+        <h3>LCM HCF GCD Calculator</h3>
+        <div id="inputs">
+            <label>Number 1: </label>
+            <input type="number" id="num1" placeholder="Enter Number here..."><br>
+            <label>Number 2: </label>
+            <input type="number" id="num2" placeholder="Enter Number here..."><br>
+        </div>
+        <button onclick="addInput()">Add Number</button>
+       <a href="#rending"><button onclick="calculate()">Calculate</button></a> 
+        <hr>
+
+        <div id="result" >
+        <h3 id="rending" >Calculation display here..</h3>
+       <p> 
+        LCM
+        <input type="text" id="lcm" class="inp" placeholder="LCM appear here.." disabled>  </p> 
+        <p> 
+            HCF
+        <input type="text" id="hcf" class="inp" placeholder="HCF appear here.." disabled> </p>
+         <p> 
+            GCD
+        <input type="text" id="gcd" class="inp" placeholder="GCD appear here.." disabled> </p>
+        </div>
+        <hr>
+        <footer>
+            <div class="footer-container">
+              <div class="footer-content">
+             <strong>Get in one touch on this links</strong>
+                <ul class="footer-links">
+                  <li><a href="index.html">Home</a></li><hr>
+                  <li><a href="letsTry.html">LCM, HCF, GCD Calculator</a></li><hr>
+                  <li><a href="table.html">Multiplicaton Table Generator</a></li><hr>
+                  <li><a href="primeFactor.html">Prime Factor Finder</a></li><hr>
+                  <li><a href="allFactorandMul.html">All Factor Finder</a></li><hr>
+                  <li><a href="binary.html">Decimal-Binary Conversion</a></li><hr>
+                  <li><a href="arithmetic.html">All Arithmetic Calculator</a></li><hr>
+                  <li><a href="squareCube.html">Square, Cube it's roots Calculator</a></li> <hr>
+                  <li><a href="percent.html">Percent of a number Calculator </a></li> <hr>
+                  <li><a href="percentB.html">Percentage Calculator</a></li> <hr>
+                  <li><a href="vemi.html">Loan Calculator</a></li> <hr>
+                  <li><a href="wdate.html">Days difference Calculator</a></li> <hr>
+                  <li><a href="xtip.html">Tip Calculator</a></li> <hr>
+                  <li><a href="ybmi.html">BMI Calculator</a></li> <hr>
+                  <li><a href="zage.html">Age Calculator</a></li> <hr>
+                </ul>
+              </div>
+            </div>
+          </footer>
+
+        <script>
+            let numInputs = 2;
+
+function addInput() {
+	numInputs++;
+	const div = document.getElementById("inputs");
+	const label = document.createElement("label");
+	label.textContent = "Number " + numInputs + ": ";
+	const input = document.createElement("input");
+	input.type = "number";
+    input.placeholder = "Enter Number here..."
+	input.id = "num" + numInputs;
+	
+	div.appendChild(label);
+	div.appendChild(input);
+}
+
+function calculate() {
+	let numbers = [];
+	for (let i = 1; i <= numInputs; i++) {
+		const input = document.getElementById("num" + i);
+		numbers.push(parseInt(input.value));
+	}
+	const lcm = calculateLCM(numbers);
+	const hcf = calculateHCF(numbers);
+	const gcd = calculateGCD(numbers);
+	document.getElementById("lcm").value = lcm;
+	document.getElementById("hcf").value = hcf;
+	document.getElementById("gcd").value = gcd;
+    
+}
+
+function calculateLCM(numbers) {
+	let lcm = numbers[0];
+	for (let i = 1; i < numbers.length; i++) {
+		lcm = (lcm * numbers[i]) / calculateGCD([lcm, numbers[i]]);
+	}
+	return lcm;
+}
+
+function calculateHCF(numbers) {
+	let hcf = numbers[0];
+	for (let i = 1; i < numbers.length; i++) {
+		hcf = calculateGCD([hcf, numbers[i]]);
+	}
+	return hcf;
+}
+
+function calculateGCD(numbers) {
+	let gcd = numbers[0];
+	for (let i = 1; i < numbers.length; i++) {
+		gcd = calculateGCDHelper(gcd, numbers[i]);
+	}
+	return gcd;
+}
+
+function calculateGCDHelper(a, b) {
+	if (b == 0) {
+		return a;
+	}
+	return calculateGCDHelper(b, a % b);
+}
+
+        </script>
+    </body>
+    </html>
+    
+

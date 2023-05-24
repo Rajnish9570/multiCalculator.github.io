@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+  <title>Multiplication Table Generator</title>
+</head>
+<style>
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+input[type="number"] {
+             margin-top: 5px;
+                display: flex;
+                padding: 10px;
+                font-weight: 900;
+                color: blue;
+                outline: none;
+                border: 2px solid sandybrown;
+            }
+            button {
+                margin: 10px;
+                background-color:sandybrown ;
+                padding: 10px;
+                border: 0;
+                outline: none;
+                border-radius:8px;
+                font-weight: 700;
+            }
+            ::placeholder{
+                color: blue;
+            }
+            #resulta{
+                float: right;
+                font-weight: 900;  
+            }
+            #a{
+                text-decoration: none;
+                background: blue;
+                color: white;
+                padding:5px;
+            border-radius: 20px;
+          
+            }
+            #multiplication-table{
+             background-color: bisque;
+             padding: 30px;
+             background-color: sandybrown;
+             color: saddlebrown;
+             font-weight: 900;
+            }
+
+</style>
+<body>
+  <h1>Multiplication Table Generator</h1>
+  <div id="table-container">
+   
+    <input type="number" id="table-size" placeholder="Enter The Number...">
+    <button onclick="generateTable()">Generate Table</button>
+    <hr>
+    <h3 >Calculation display here..</h3>
+<center>
+    <p id="head"></p>
+    <div id="multiplication-table"></div>
+</center>
+  <hr>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+     <strong>Get in one touch on this links</strong>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li><hr>
+          <li><a href="letsTry.html">LCM, HCF, GCD Calculator</a></li><hr>
+          <li><a href="table.html">Multiplicaton Table Generator</a></li><hr>
+          <li><a href="primeFactor.html">Prime Factor Finder</a></li><hr>
+          <li><a href="allFactorandMul.html">All Factor Finder</a></li><hr>
+          <li><a href="binary.html">Decimal-Binary Conversion</a></li><hr>
+          <li><a href="arithmetic.html">All Arithmetic Calculator</a></li><hr>
+          <li><a href="squareCube.html">Square, Cube it's roots Calculator</a></li><hr>
+          <li><a href="percent.html">Percent of a number Calculator </a></li><hr>
+          <li><a href="percentB.html">Percentage Calculator</a></li><hr>
+          <li><a href="vemi.html">Loan Calculator</a></li><hr>
+          <li><a href="wdate.html">Days difference Calculator</a></li><hr>
+          <li><a href="xtip.html">Tip Calculator</a></li><hr>
+          <li><a href="ybmi.html">BMI Calculator</a></li><hr>
+          <li><a href="zage.html">Age Calculator</a></li><hr>
+        </ul>
+      </div>
+    </div>
+  </footer>
+ 
+  <script>
+function generateTable() {
+  var number = document.getElementById("table-size").value;
+  var table = document.getElementById("multiplication-table");
+  document.getElementById('head').innerHTML="Multiplication of " + number;
+
+  // Clear previous table
+  table.innerHTML = "";
+
+  // Check if a number is entered
+  if (number === "") {
+    var message = document.createElement("p");
+    message.textContent = "Please enter a number.";
+    table.appendChild(message);
+    return;
+  }
+
+  // Create table rows and cells
+  for (var i = 1; i <= 10; i++) {
+    var row = document.createElement("tr");
+
+    var expressionCell = document.createElement("td");
+    expressionCell.textContent = number + " x " + i + " =";
+    row.appendChild(expressionCell);
+
+    var resultCell = document.createElement("td");
+    resultCell.textContent = number * i;
+    row.appendChild(resultCell);
+
+    table.appendChild(row);
+  }
+}
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word-Binary Conversion</title>
+  <style>
+    body{
+        margin: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    textarea{
+        width: 100%;
+        resize: none;
+        height: 150px;
+        border: 2px solid sandybrown;
+       outline: none;
+       font-weight: 700;
+    }
+
+    ::placeholder{
+        color: white;
+        font-style: italic;
+        padding: 5px;
+        background-color: blue;
+        font-weight: 900;
+        text-align: center;
+    }
+button{
+    border: 1px blue solid;
+    padding: 10px;
+    background-color: white;
+    color: blue;
+    letter-spacing: 1px;
+    border-radius: 8px;
+}
+
+a{
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+    color: sandybrown;
+}
+li{
+list-style: none;
+padding: 10px;
+}
+  </style>
+  <script>
+    function wordToBinary(word) {
+      let binary = '';
+      for (let i = 0; i < word.length; i++) {
+        // Get the ASCII value of the character
+        let asciiVal = word.charCodeAt(i);
+        // Convert the ASCII value to binary representation
+        let binaryVal = asciiVal.toString(2).padStart(7, '0'); // Convert to binary and pad with zeros
+        binary += binaryVal;
+      }
+      return binary;
+    }
+
+    function binaryToWord(binary) {
+      let word = '';
+      // Split the binary string into 7-bit chunks
+      let binaryChunks = binary.match(/.{1,7}/g);
+      for (let i = 0; i < binaryChunks.length; i++) {
+        // Convert each binary chunk to its decimal equivalent
+        let decimalVal = parseInt(binaryChunks[i], 2);
+        // Get the character from the ASCII value
+        let char = String.fromCharCode(decimalVal);
+        word += char;
+      }
+      return word;
+    }
+
+    function convertWordToBinary() {
+      let word = document.getElementById('word').value;
+      let binary = wordToBinary(word);
+      document.getElementById('binary').value = binary;
+    }
+
+    function convertBinaryToWord() {
+      let binary = document.getElementById('binary').value;
+      let word = binaryToWord(binary);
+      document.getElementById('word').value = word;
+    }
+  </script>
+</head>
+<body>
+  <h3>Word-Binary Conversion</h3>
+  <nav>
+    <li><a href="areaSqRect.html">Geometric Shapes Calculator</a></li>
+    <li><a href="areaSqRect2.html">Geometric shapes Calculator 2</a></li>
+    <li><a href="color.html">Hex Value, HSL value, RGB value Finder</a></li>
+    <li><a href="mean.html">Mean Calculator</a></li>
+    <li><a href="median.html">Median Calculator</a></li>
+    <li><a href="mode.html">Mode Calculator</a></li>
+    <li><a href="uuu.html">Average Calculator</a></li>
+    <li><a href="word.html">Text-binary conversion</a></li>
+    <li><a href="ratio.html">Math Solver</a></li>
+    <li><a href="phy.html">Time Distance & Speed Calculator</a></li>
+    <li><a href="fraction.html">Fractional Calculations</a></li>
+    <li><a href="countWord.html">Word counter</a></li>
+    <li><a href="chart.html">Trigonometry Functions Value </a></li>
+    <li><a href="power.html">Power and root Calculator</a></li>
+</nav>
+<hr>
+ 
+ <textarea name="" id="word" placeholder="Write Word here..."></textarea> <br>
+  <button onclick="convertWordToBinary()">Convert to Binary</button>
+  <br><br>
+ <textarea name="" id="binary" placeholder="Write Binary here..."></textarea> <br>
+  <button onclick="convertBinaryToWord()">Convert to Word</button>
+  <hr>
+  <a href="index.html">HOME</a>
+</body>
+</html>

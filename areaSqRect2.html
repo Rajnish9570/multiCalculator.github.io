@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometric Calculations</title>
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    p{
+   
+      color: blue;
+    }
+input{
+
+  padding: 8px;
+  outline: none;
+  width: 70px;
+  border: none;
+  border-bottom: 2px solid sandybrown;
+}
+button{
+  float: right;
+}
+h2{
+  text-align: center;
+  color: sandybrown;
+}
+button{
+    border: 1px blue solid;
+    padding: 10px;
+    background-color: white;
+    color: blue;
+    letter-spacing: 1px;
+    border-radius: 8px;
+}
+
+a{
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+    color: sandybrown;
+}
+li{
+list-style: none;
+padding: 10px;
+}
+  </style>
+</head>
+<body>
+  <h3>Geometric Calculations</h3>
+  <nav>
+    <li><a href="areaSqRect.html">Geometric Shapes Calculator</a></li>
+    <li><a href="areaSqRect2.html">Geometric shapes Calculator 2</a></li>
+    <li><a href="color.html">Hex Value, HSL value, RGB value Finder</a></li>
+    <li><a href="mean.html">Mean Calculator</a></li>
+    <li><a href="median.html">Median Calculator</a></li>
+    <li><a href="mode.html">Mode Calculator</a></li>
+    <li><a href="uuu.html">Average Calculator</a></li>
+    <li><a href="word.html">Text-binary conversion</a></li>
+    <li><a href="ratio.html">Math Solver</a></li>
+    <li><a href="phy.html">Time Distance & Speed Calculator</a></li>
+    <li><a href="fraction.html">Fractional Calculations</a></li>   
+     <li><a href="countWord.html">Word counter</a></li>
+     <li><a href="chart.html">Trigonometry Functions Value </a></li>
+     <li><a href="power.html">Power and root Calculator</a></li>
+</nav>
+<hr>
+
+  <h2>Square</h2>
+  <p>Side Length: <br><input type="number" id="square-side"></p>
+  <button onclick="calculateSquare()">Calculate</button>
+  <p>Area: <span id="square-area"></span></p>
+  <p>Perimeter: <span id="square-perimeter"></span></p>
+<hr>
+  <h2>Triangle</h2>
+  <p>Base Length: <br><input type="number" id="triangle-base"></p>
+  <p>Height: <br><input type="number" id="triangle-height"></p>
+  <button onclick="calculateTriangle()">Calculate</button>
+  <p>Area: <span id="triangle-area"></span></p>
+  <p>Perimeter: <span id="triangle-perimeter"></span></p>
+<hr>
+  <h2>Circle</h2>
+  <p>Radius: <br> <input type="number" id="circle-radius"></p>
+  <button onclick="calculateCircle()">Calculate</button>
+  <p>Area: <span id="circle-area"></span></p>
+  <p>Circumference: <span id="circle-circumference"></span></p>
+<hr>
+  <h2>Rectangle</h2>
+  <p>Length: <br> <input type="number" id="rectangle-length"></p>
+  <p>Width: <br> <input type="number" id="rectangle-width"></p>
+  <button onclick="calculateRectangle()">Calculate</button>
+  <p>Area: <span id="rectangle-area"></span></p>
+  <p>Perimeter: <span id="rectangle-perimeter"></span></p>
+<hr>
+  <h2>Cube</h2>
+  <p>Side Length: <br> <input type="number" id="cube-side"></p>
+  <button onclick="calculateCube()">Calculate</button>
+  <p>Volume: <span id="cube-volume"></span></p>
+  <p>Surface Area: <span id="cube-surface-area"></span></p>
+<hr>
+  <h2>Cuboid</h2>
+  <p>Length: <br> <input type="number" id="cuboid-length"></p>
+  <p>Width: <br> <input type="number" id="cuboid-width"></p>
+  <p>Height: <br> <input type="number" id="cuboid-height"></p>
+  <button onclick="calculateCuboid()">Calculate</button>
+  <p>Volume: <span id="cuboid-volume"></span></p>
+  <p>Surface Area: <span id="cuboid-surface-area"></span></p>
+<hr>
+  <h2>Sphere</h2>
+  <p>Radius: <br> <input type="number" id="sphere-radius"></p>
+  <button onclick="calculateSphere()">Calculate</button>
+  <p>Volume: <span id="sphere-volume"></span></p>
+  <p>Surface Area: <span id="sphere-surface-area"></span></p>
+<hr>
+  <h2>Cone</h2>
+  <p>Radius: <br><input type="number" id="cone-radius"></p>
+  <p>Height: <br> <input type="number" id="cone-height"></p>
+  <button onclick="calculateCone()">Calculate</button>
+  <p>Volume: <span id="cone-volume"></span></p>
+  <p>Surface Area: <span id="cone-surface-area"></span></p>
+<hr>
+  <h2>Cylinder</h2>
+  <p>Radius: <br><input type="number" id="cylinder-radius"></p>
+  <p>Height: <br><input type="number" id="cylinder-height"></p>
+  <button onclick="calculateCylinder()">Calculate</button>
+  <p>Volume: <span id="cylinder-volume"></span></p>
+  <p>Surface Area: <span id="cylinder-surface-area"></span></p>
+<hr>
+  <h2>Rectangular Pyramid</h2>
+  <p>Base Length: <br><input type="number" id="pyramid-rect-base"></p>
+  <p>Base Width: <br><input type="number" id="pyramid-rect-width"></p>
+  <p>Height: <br><input type="number" id="pyramid-rect-height"></p>
+  <button onclick="calculateRectangularPyramid()">Calculate</button>
+  <p>Volume: <span id="pyramid-rect-volume"></span></p>
+  <p>Surface Area: <span id="pyramid-rect-surface-area"></span></p>
+<hr>
+  <h2>Square Pyramid</h2>
+  <p>Base Length: <br> <input type="number" id="pyramid-square-base"></p>
+  <p>Height: <br> <input type="number" id="pyramid-square-height"></p>
+  <button onclick="calculateSquarePyramid()">Calculate</button>
+  <p>Volume: <span id="pyramid-square-volume"></span></p>
+  <p>Surface Area: <span id="pyramid-square-surface-area"></span></p>
+  <a href="areaSqRect.html">More shapes Calculations</a>
+  <a href="index.html">HOME</a>
+  <script>
+    function calculateSquare() {
+      var side = parseFloat(document.getElementById("square-side").value);
+      var area = side * side;
+      var perimeter = 4 * side;
+      document.getElementById("square-area").innerText = area;
+      document.getElementById("square-perimeter").innerText = perimeter;
+    }
+
+    function calculateTriangle() {
+      var base = parseFloat(document.getElementById("triangle-base").value);
+      var height = parseFloat(document.getElementById("triangle-height").value);
+      var area = (base * height) / 2;
+      var perimeter = base + height + Math.sqrt(base * base + height * height);
+      document.getElementById("triangle-area").innerText = area;
+      document.getElementById("triangle-perimeter").innerText = perimeter;
+    }
+
+    function calculateCircle() {
+      var radius = parseFloat(document.getElementById("circle-radius").value);
+      var area = Math.PI * radius * radius;
+      var circumference = 2 * Math.PI * radius;
+      document.getElementById("circle-area").innerText = area;
+      document.getElementById("circle-circumference").innerText = circumference;
+    }
+
+    function calculateRectangle() {
+      var length = parseFloat(document.getElementById("rectangle-length").value);
+      var width = parseFloat(document.getElementById("rectangle-width").value);
+      var area = length * width;
+      var perimeter = 2 * (length + width);
+      document.getElementById("rectangle-area").innerText = area;
+      document.getElementById("rectangle-perimeter").innerText = perimeter;
+    }
+
+    function calculateCube() {
+      var side = parseFloat(document.getElementById("cube-side").value);
+      var volume = side * side * side;
+      var surfaceArea = 6 * side * side;
+      document.getElementById("cube-volume").innerText = volume;
+      document.getElementById("cube-surface-area").innerText = surfaceArea;
+    }
+
+    function calculateCuboid() {
+      var length = parseFloat(document.getElementById("cuboid-length").value);
+      var width = parseFloat(document.getElementById("cuboid-width").value);
+      var height = parseFloat(document.getElementById("cuboid-height").value);
+      var volume = length * width * height;
+      var surfaceArea = 2 * (length * width + length * height + width * height);
+      document.getElementById("cuboid-volume").innerText = volume;
+      document.getElementById("cuboid-surface-area").innerText = surfaceArea;
+    }
+
+    function calculateSphere() {
+      var radius = parseFloat(document.getElementById("sphere-radius").value);
+      var volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+      var surfaceArea = 4 * Math.PI * Math.pow(radius, 2);
+      document.getElementById("sphere-volume").innerText = volume;
+      document.getElementById("sphere-surface-area").innerText = surfaceArea;
+    }
+
+    function calculateCone() {
+      var radius = parseFloat(document.getElementById("cone-radius").value);
+      var height = parseFloat(document.getElementById("cone-height").value);
+      var volume = (1 / 3) * Math.PI * Math.pow(radius, 2) * height;
+      var slantHeight = Math.sqrt(radius * radius + height * height);
+      var surfaceArea = Math.PI * radius * (radius + slantHeight);
+      document.getElementById("cone-volume").innerText = volume;
+      document.getElementById("cone-surface-area").innerText = surfaceArea;
+    }
+
+    function calculateCylinder() {
+      var radius = parseFloat(document.getElementById("cylinder-radius").value);
+      var height = parseFloat(document.getElementById("cylinder-height").value);
+      var volume = Math.PI * Math.pow(radius, 2) * height;
+      var surfaceArea = 2 * Math.PI * radius * (radius + height);
+      document.getElementById("cylinder-volume").innerText = volume;
+      document.getElementById("cylinder-surface-area").innerText = surfaceArea;
+    }
+
+    function calculateRectangularPyramid() {
+      var baseLength = parseFloat(document.getElementById("pyramid-rect-base").value);
+      var baseWidth = parseFloat(document.getElementById("pyramid-rect-width").value);
+      var height = parseFloat(document.getElementById("pyramid-rect-height").value);
+      var volume = (1 / 3) * baseLength * baseWidth * height;
+      var baseArea = baseLength * baseWidth;
+      var slantHeight = Math.sqrt(baseLength * baseLength + height * height);
+      var surfaceArea = baseArea + (1 / 2) * (baseLength + baseWidth) * slantHeight;
+      document.getElementById("pyramid-rect-volume").innerText = volume;
+      document.getElementById("pyramid-rect-surface-area").innerText = surfaceArea;
+    }
+
+    function calculateSquarePyramid() {
+      var baseLength = parseFloat(document.getElementById("pyramid-square-base").value);
+      var height = parseFloat(document.getElementById("pyramid-square-height").value);
+      var volume = (1 / 3) * Math.pow(baseLength, 2) * height;
+      var baseArea = Math.pow(baseLength, 2);
+      var slantHeight = Math.sqrt(Math.pow(baseLength / 2, 2) + height * height);
+      var surfaceArea = baseArea + (1 / 2) * baseLength * 4 * slantHeight;
+      document.getElementById("pyramid-square-volume").innerText = volume;
+      document.getElementById("pyramid-square-surface-area").innerText = surfaceArea;
+    }
+  </script>
+
+</body>
+</html>

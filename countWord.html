@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word, Character, and Sentence Counter</title>
+  <style>
+a{
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+    color: sandybrown;
+}
+li{
+list-style: none;
+padding: 10px;
+}
+textarea{
+    width: 100%;
+    resize: none;
+    height: 100px;
+    border: 2px sandybrown solid;
+    outline: none;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #0000ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+  </style>
+  <script>
+    function count() {
+      var text = document.getElementById("inputText").value;
+      
+      // Counting words
+      var words = text.trim().split(/\s+/).length;
+      
+      // Counting characters (excluding spaces and symbols)
+      var characters = text.replace(/[^a-zA-Z0-9]/g, "").length;
+      
+      // Counting sentences
+      var sentences = text.trim().split(/[.!?]+/).length;
+      
+      // Displaying the counts
+      document.getElementById("wordCount").textContent = words;
+      document.getElementById("charCount").textContent = characters;
+      document.getElementById("sentenceCount").textContent = sentences;
+    }
+  </script>
+</head>
+<body>
+    <h3>Word, Character, and Sentence Counter</h3>
+  <nav>
+    <li><a href="areaSqRect.html">Geometric Shapes Calculator</a></li>
+    <li><a href="areaSqRect2.html">Geometric shapes Calculator 2</a></li>
+    <li><a href="color.html">Hex Value, HSL value, RGB value Finder</a></li>
+    <li><a href="mean.html">Mean Calculator</a></li>
+    <li><a href="median.html">Median Calculator</a></li>
+    <li><a href="mode.html">Mode Calculator</a></li>
+    <li><a href="uuu.html">Average Calculator</a></li>
+    <li><a href="word.html">Text-binary conversion</a></li>
+    <li><a href="ratio.html">Math Solver</a></li>
+    <li><a href="phy.html">Time Distance & Speed Calculator</a></li>
+    <li><a href="fraction.html">Fractional Calculations</a></li>
+    <li><a href="countWord.html">Word counter</a></li>
+    <li><a href="chart.html">Trigonometry Functions Value </a></li>
+    <li><a href="power.html">Power and root Calculator</a></li>
+</nav>
+<hr>
+
+  <textarea id="inputText" placeholder="Type here Something..."></textarea>
+  <br>
+  <p>Put full stop (.) only when you start next sentence. 
+   After complete the sentence don't place fullstop.</p>
+   
+  <button onclick="count()">Count</button>
+  <br>
+  <p>Word count: <span id="wordCount">0</span></p>
+  <p>Character count: <span id="charCount">0</span></p>
+  <p>Sentence count: <span id="sentenceCount">0</span></p>
+  <hr>
+  <a href="index.html">HOME</a>
+</body>
+</html>
